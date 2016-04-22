@@ -10,3 +10,5 @@ activate
 
 /db/
 /.dumpdb.sh
+
+/.uploaddb.sh
