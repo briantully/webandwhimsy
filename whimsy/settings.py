@@ -39,6 +39,7 @@ INSTALLED_APPS = (
     'compressor',
     'whimsy',
     'tastypie',
+    'south',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -98,6 +99,11 @@ STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
     'compressor.finders.CompressorFinder',
 )
+
+# Simplified static file serving.
+# https://warehouse.python.org/project/whitenoise/
+
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
 TEMPLATE_DIRS = (
     os.path.join(BASE_DIR, 'templates')
