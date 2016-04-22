@@ -1,6 +1,9 @@
 venv
+.venv
 *.pyc
 *.swp
 *.swo
 staticfiles
 node_modules
+activate
+.idea
