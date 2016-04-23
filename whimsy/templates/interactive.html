@@ -29,7 +29,7 @@
   
                       <div class="row work-company">
                         <span class="pull-left">{{ job.company }}
-                          <a href="{{ job.company.link }}">
+                          <a href="{{ job.company.link }}" target="_blank">
                             <span class="icomoon icon icon-link" aria-hidden="true"></span>
                           </a>
                         </span>
@@ -65,16 +65,16 @@
               <div class="col-md-12 text-center" id="education">
                 <strong>
                   <h4 class="text-center">
-                    <a href="http://www.nmsu.edu">Purchase College, State University of New York</a>
+                    <a href="http://www.purchase.edu" target="_blank">Purchase College, State University of New York</a>
                   </h4>
                 </strong>
-                <h5 class="text-center"><a href="http://www.purchase.edu/Departments/AcademicPrograms/Arts/Music/default.aspx">Conservatory of Music</a></h5>
+                <h5 class="text-center"><a href="http://www.purchase.edu/Departments/AcademicPrograms/Arts/Music/default.aspx" target="_blank">Conservatory of Music</a></h5>
                 <h5 class="text-center">Bachelor of Fine Arts</h5>
                 <h5 class="text-center">Major:
-                  <a href="http://www.purchase.edu/departments/AcademicPrograms/Arts/music/programs.aspx">Music</a>
+                  <a href="http://www.purchase.edu/departments/AcademicPrograms/Arts/music/programs.aspx" target="_blank">Music</a>
                 </h5>
                 <h5 class="text-center">Concentration:
-                    <a href="http://www.purchase.edu/Departments/AcademicPrograms/Arts/Music/StudioComposition/default.aspx">Studio Composition</a>
+                    <a href="http://www.purchase.edu/Departments/AcademicPrograms/Arts/Music/StudioComposition/default.aspx" target="_blank">Studio Composition</a>
                 </h5>
               </div>
 
@@ -145,7 +145,7 @@
                   skills.push({
                     weight: response.objects[ii].weight,
                     text: response.objects[ii].name,
-                    link: response.objects[ii].link
+                    link: {href: response.objects[ii].link, target: "_blank"}
                   });
                 }
  
