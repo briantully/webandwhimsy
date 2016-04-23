@@ -12,3 +12,5 @@ activate
 /.dumpdb.sh
 
 /.uploaddb.sh
+
+/.env
