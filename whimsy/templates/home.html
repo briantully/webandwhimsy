@@ -38,10 +38,7 @@
               <ul class="nav navbar-nav">
                 <li class="active"><a id="interactive" href="">Interactive</a></li>
                 <!--<li><a id="standard" href="">Standard</a></li>-->
-                <li><a id="resume-link" data-toggle="tooltip" data-placement="bottom" title="Download Resum&eacute; as PDF"
-                       href="https://dl.dropboxusercontent.com/u/16531332/resume/Brian%20Tully%20resume%20April%202016%20online.pdf">
-                  <span class="icomoon icon icon-pdf" aria-hidden="true"></span></a>
-                </li>
+                <li id="downloadLink"></li>
                 <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                        Contact Me!
@@ -72,7 +69,7 @@
           <span title="v.9/10" class="icomoon icon icon-IE" aria-hidden="true"></span>
           <span title="v.27" class="icomoon icon icon-chrome" aria-hidden="true"></span>
         </span>
-        <span>Original design &amp; development generously shared by <a href="http://webandwhimsy.com" target="_blank">Diana Whitten</a>.
+        <span>Original design &amp; development by <a href="http://webandwhimsy.com" target="_blank">Diana Whitten</a>.
           Tweaked by yours truly.</span>
       </footer>
     </div>
@@ -86,19 +83,37 @@
     <script src="{{ STATIC_URL }}js/jqcloud-1.0.4.min.js"></script>
     {% endcompress %}
 
+
     <script>
       $(document).ready(function() {
 
+        /* resume download */
+        var downloadLink = $('#downloadLink');
+        downloadLink.append($('<a>')
+          .attr('data-toggle', 'tooltip')
+          .attr('data-placement', 'bottom')
+          .attr('title', "Download my resume")
+          .attr('href', 'http://tinyurl.com/btully-resume-04-2016')
+          .attr('download', 'Brian-Tully-resume.pdf')
+          .attr('target', '_blank')
+          .addClass('resume-link')
+          .append('<span class="icomoon icon icon-pdf" aria-hidden="true"></span')
+        );
+        if (!('download' in downloadLink.children('a:first').get(0))) {
+           downloadLink.append(' (right-click and choose Save Link as...")');
+        }
+
+        /* tooltips */
         $('.browsers').find('.icomoon').tooltip();
-        $('#resume-link').tooltip();
+        $('#downloadLink').find('.resume-link').tooltip();
 
         $('.nav > li > a').click(function(e) {
-          e.preventDefault();
 
           var $this = $(this);
           var this_id = $this.attr('id');
 
           if (this_id) {
+            e.preventDefault();
             $('.nav').find('.active').removeClass('active');
             $this.parent().addClass('active');
             $('#page-contents').empty().load('/' + this_id, function(e) {
@@ -112,6 +127,7 @@
         $('#interactive').click();
         //$('#standard').click();
 
+        /* open external links in new window */
         $('a').each(function() {
             var a = new RegExp('/' + window.location.host + '/');
             if (!a.test(this.href)) {
