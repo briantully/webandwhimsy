@@ -19,14 +19,22 @@
 @brand-warning:         #f0ad4e;
 @brand-danger:          #d9534f;
 
+//** My Colors
+@brian-blue:            lightslategrey;
+@light-blue:            #90c5f0;
+@dark-red:              #400;
+@med-red:               #600;
+@red:                   #900;
+@bright-red:            #a00;
+@cream:                 #fcfbe3;
 
 //== Scaffolding
 //
 //## Settings for some of the most global styles.
 
 //** Background color for `<body>`.
-//@body-bg:               #fcfbe3;
-@body-bg:               lightslategrey;
+//@body-bg:               @cream;
+@body-bg:               @brian-blue;
 
 //** Global text color on `<body>`.
 @text-color:            #222;
@@ -223,7 +231,7 @@
 //** Dropdown link text color.
 @dropdown-link-color:            @text-color;
 //** Hover color for dropdown links.
-@dropdown-link-hover-color:      @body-bg;
+@dropdown-link-hover-color:      @dark-red;
 //** Hover background for dropdown links.
 @dropdown-link-hover-bg:         @brand-primary;
 
@@ -349,7 +357,7 @@
 @navbar-default-border:            darken(@navbar-default-bg, 6.5%);
 
 // Navbar links
-@navbar-default-link-color:                #fcfbe3;
+@navbar-default-link-color:                @cream;
 @navbar-default-link-hover-color:          #999;
 @navbar-default-link-hover-bg:             transparent;
 @navbar-default-link-active-color:         #999;
@@ -358,8 +366,8 @@
 @navbar-default-link-disabled-bg:          transparent;
 
 // Navbar brand label
-@navbar-default-brand-color:               @navbar-default-link-color;
-@navbar-default-brand-hover-color:         darken(@navbar-default-brand-color, 10%);
+@navbar-default-brand-color:               darken(@navbar-default-link-color, 10%);
+@navbar-default-brand-hover-color:         @navbar-default-link-color;
 @navbar-default-brand-hover-bg:            transparent;
 
 // Navbar toggle
@@ -501,7 +509,7 @@
 //** Tooltip max width
 @tooltip-max-width:           200px;
 //** Tooltip text color
-@tooltip-color:               #fcfbe3;
+@tooltip-color:               @cream;
 //** Tooltip background color
 @tooltip-bg:                  rgba(0,0,0,.8);
 @tooltip-opacity:             .9;
@@ -848,6 +856,6 @@
 //== Timelin
 //
 //##
-@timeline-bg-color-odd:             #600;
-@timeline-border-color-odd:         #400;
-@timeline-bg-color-even:            #900;
+@timeline-bg-color-odd:             @med-red;
+@timeline-border-color-odd:         @dark-red;
+@timeline-bg-color-even:            @red;

@@ -38,8 +38,9 @@
               <ul class="nav navbar-nav">
                 <li class="active"><a id="interactive" href="">Interactive</a></li>
                 <!--<li><a id="standard" href="">Standard</a></li>-->
-                <li><a id="resume-link" href="https://dl.dropboxusercontent.com/u/16531332/resume/Brian%20Tully%20resume%20April%202016%20online.pdf">
-                  <span data-toggle="tooltip" data-placement="bottom" title="Download Resum&eacute; as PDF" class="icomoon icon icon-pdf" aria-hidden="true"></span></a>
+                <li><a id="resume-link" data-toggle="tooltip" data-placement="bottom" title="Download Resum&eacute; as PDF"
+                       href="https://dl.dropboxusercontent.com/u/16531332/resume/Brian%20Tully%20resume%20April%202016%20online.pdf">
+                  <span class="icomoon icon icon-pdf" aria-hidden="true"></span></a>
                 </li>
                 <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -72,7 +73,7 @@
           <span title="v.27" class="icomoon icon icon-chrome" aria-hidden="true"></span>
         </span>
         <span>Original design &amp; development generously shared by <a href="http://webandwhimsy.com" target="_blank">Diana Whitten</a>.
-          <br>Tweaked by yours truly.</span>
+          Tweaked by yours truly.</span>
       </footer>
     </div>
 
@@ -89,7 +90,7 @@
       $(document).ready(function() {
 
         $('.browsers').find('.icomoon').tooltip();
-        $('#resume-link').find('.icomoon').tooltip();
+        $('#resume-link').tooltip();
 
         $('.nav > li > a').click(function(e) {
           e.preventDefault();
