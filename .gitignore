@@ -7,10 +7,7 @@ staticfiles
 node_modules
 activate
 .idea
-
 /db/
-/.dumpdb.sh
-
-/.uploaddb.sh
-
 /.env
+/dumpdb.sh
+/uploaddb.sh
