@@ -18,5 +18,5 @@ urlpatterns = patterns('',
     url(r'^interactive$', views.interactive, name='interactive'),
     url(r'^standard$', views.standard, name='standard'),
     url(r'^$', views.home, name='home'),
-    url(r'^wakemydyno\.txt$', TemplateView.as_view(template_name='wakemydyno.txt', content_type='text/plain')),
+#    url(r'^wakemydyno\.txt$', TemplateView.as_view(template_name='wakemydyno.txt', content_type='text/plain')),
 )
