@@ -20,7 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 SECRET_KEY = '76z*3h7a3^2%lhcr90sucwn0dxuiv28j0li7&9ryuh$d61b$nv'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 TEMPLATE_DEBUG = True
 
@@ -55,6 +55,16 @@ ROOT_URLCONF = 'whimsy.urls'
 
 WSGI_APPLICATION = 'whimsy.wsgi.application'
 
+# List of compiled regular expression objects representing URLs that need not
+# be reported by BrokenLinkEmailsMiddleware. Here are a few examples:
+# import re
+# IGNORABLE_404_URLS = (
+#    re.compile(r'^/apple-touch-icon.*\.png$'),
+#    re.compile(r'^/favicon.ico$'),
+#    re.compile(r'^/robots.txt$'),
+#    re.compile(r'^/phpmyadmin/'),
+#    re.compile(r'\.(cgi|php|pl)$'),
+# )
 
 # Database
 # https://docs.djangoproject.com/en/1.6/ref/settings/#databases

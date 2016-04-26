@@ -1,5 +1,7 @@
 from django.conf.urls import patterns, url
 from django.views.generic import TemplateView
+from django.contrib.staticfiles.storage import staticfiles_storage
+from django.views.generic.base import RedirectView
 from whimsy.views import views
 
 # RESTful stuffs
@@ -19,4 +21,6 @@ urlpatterns = patterns('',
     url(r'^standard$', views.standard, name='standard'),
     url(r'^$', views.home, name='home'),
 #    url(r'^wakemydyno\.txt$', TemplateView.as_view(template_name='wakemydyno.txt', content_type='text/plain')),
+    url(r'^favicon.ico$', RedirectView.as_view(
+        url=staticfiles_storage.url('favicon/favicon.ico'), permanent=False), name="favicon"),
 )
