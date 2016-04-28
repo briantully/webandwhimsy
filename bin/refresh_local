@@ -5,6 +5,9 @@ set -eo pipefail
 
 echo "-----> Let's refresh our local env and restart"
 
+echo "-----> First let's clean all .pyc files"
+find . -name "*.pyc" -exec rm -rf {} \;
+
 # Work around Heroku bug whereby pylibmc isn't available during
 # compile phase. See: https://github.com/heroku/heroku-buildpack-python/issues/57
 export MEMCACHE_SERVERS='' MEMCACHIER_SERVERS=''
