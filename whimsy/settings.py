@@ -74,6 +74,7 @@ from urlparse import urlparse
 # Parse database configuration from $DATABASE_URL
 import dj_database_url
 DATABASES = {'default': dj_database_url.config(default=os.environ.get('DATABASE_URL'))}
+#DATABASES = {'default': dj_database_url.config(default='postgres://localhost/whimsy')}
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.6/topics/i18n/
