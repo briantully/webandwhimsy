@@ -55,7 +55,7 @@
   font-family: 'Life Savers';
   font-style: normal;
   font-weight: 700;
-  src: local('Life Savers Bold'), local('LifeSavers-Bold'), url(http://fonts.gstatic.com/s/lifesavers/v6/THQKqChyYUm97rNPVFdGGRbnBKKEOwRKgsHDreGcocg.woff) format('woff');
+  src: local('Life Savers Bold'), local('LifeSavers-Bold'), url(https://fonts.gstatic.com/s/lifesavers/v6/THQKqChyYUm97rNPVFdGGRbnBKKEOwRKgsHDreGcocg.woff) format('woff');
 }
 
 /* home */
@@ -94,7 +94,7 @@ html,
 body {
   height: 100%;
 }
- 
+
 body {
   min-width: 580px;
 }
@@ -113,9 +113,12 @@ footer {
   font-family: 'Life Savers';
   color: #fff;
   text-shadow: 1px 3px 6px rgba(0,0,0,.5);
+  position: static;
+  bottom: 0;
+  width: 100%;
 }
 
-.nav a:hover .icomoon, 
+.nav a:hover .icomoon,
 .nav .icomoon:hover {
   background-image: none !important;
 }
@@ -332,7 +335,7 @@ footer {
 
   .carousel .carousel-inner .work-company span {
    padding: 0 26px;
-  } 
+  }
 
   .work-details li {
     line-height: 17.5px;
@@ -378,7 +381,7 @@ footer {
 .dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus,
 #education a:hover,
 #skillcloud a:hover {
-  text-shadow: 1px 3px 6px #979797;
+  text-shadow: 1px 3px 6px rgba(0,0,0,0.35);
 }
 
 #education a:hover {
@@ -387,9 +390,10 @@ footer {
 
 #skillcloud a:hover {
   color: @cream;
+  text-shadow: 1px 3px 6px rgba(0,0,0,0.35);
 }
 
-/* education section */ 
+/* education section */
 #education a {
   color: @bright-red;
 }
@@ -399,7 +403,7 @@ footer {
 }
 
 #education-title {
-  margin-top: 52px; 
+  margin-top: 52px;
 }
 
 /* Bootstrap Carousel Customizings */
@@ -619,7 +623,7 @@ a,
 
 
 
-/* Experience */ 
+/* Experience */
 .paper-style .carousel-container {
   position:relative;
   width: auto;
@@ -636,7 +640,7 @@ a,
   -moz-box-shadow: 0 0 35px rgba(0, 0, 0, 0.1) inset;
   box-shadow: 0 0 35px rgba(0, 0, 0, 0.1) inset;
 }
- 
+
 /* This is the top right shadow */
 .paper-style .carousel-container:before{
   position:absolute;
@@ -678,7 +682,7 @@ a,
   -moz-box-shadow: -10px -10px 10px rgba(0, 0, 0, 0.5);
   box-shadow: -10px -10px 10px rgba(0, 0, 0, 0.5);
 }
- 
+
 /* This class establishes the tape of the top side of the box */
 .paper-style-tape {
   position: absolute;
