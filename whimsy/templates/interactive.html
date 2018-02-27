@@ -2,7 +2,7 @@
             <div class="col-md-6">
               <h1 class="text-center" id="experience">
                 <span class="icomoon dim-icon icon icon-desklamp" aria-hidden="true"></span>
-                Experience 
+                Experience
                 <span class="icomoon dim-icon icon icon-visitor" aria-hidden="true"></span>
               </h1>
 
@@ -18,7 +18,7 @@
                     <div class="carousel-container">
                       <div class="work-history-title">
                         <span class="work-history-job-title">{{ job.title }}</span>
-                        <span class="work-history-dates">{{ job.start|date:"m/y" }} - 
+                        <span class="work-history-dates">{{ job.start|date:"m/y" }} -
     {% if job.end == None %}
         Present
     {% else %}
@@ -26,7 +26,7 @@
     {% endif %}
                         </span>
                       </div>
-  
+
                       <div class="row work-company">
                         <span class="pull-left">{{ job.company }}
                           <a href="{{ job.company.link }}" target="_blank">
@@ -59,7 +59,7 @@
               </div>
               <h1 class="text-center" id="education-title">
                 <span class="icomoon dim-icon icon icon-graduate" aria-hidden="true"></span>
-                Education 
+                Education
                 <span class="icomoon dim-icon icon icon-books" aria-hidden="true"></span>
               </h1>
               <div class="col-md-12 text-center" id="education">
@@ -68,13 +68,13 @@
                     <a href="http://www.purchase.edu" target="_blank">Purchase College, State University of New York</a>
                   </h4>
                 </strong>
-                <h5 class="text-center"><a href="http://www.purchase.edu/Departments/AcademicPrograms/Arts/Music/default.aspx" target="_blank">Conservatory of Music</a></h5>
+                <h5 class="text-center"><a href="https://www.purchase.edu/academics/music/" target="_blank">Conservatory of Music</a></h5>
                 <h5 class="text-center">Bachelor of Fine Arts</h5>
                 <h5 class="text-center">Major:
-                  <a href="http://www.purchase.edu/departments/AcademicPrograms/Arts/music/programs.aspx" target="_blank">Music</a>
+                  <a href="https://www.purchase.edu/academics/music/" target="_blank">Music</a>
                 </h5>
                 <h5 class="text-center">Concentration:
-                    <a href="http://www.purchase.edu/Departments/AcademicPrograms/Arts/Music/StudioComposition/default.aspx" target="_blank">Studio Composition</a>
+                    <a href="https://www.purchase.edu/academics/studio-composition/" target="_blank">Studio Composition</a>
                 </h5>
               </div>
 
@@ -93,7 +93,7 @@
             <div class="col-md-12">
               <h1 class="text-center" id="history">
                 <span class="icomoon dim-icon icon icon-calendar" aria-hidden="true"></span>
-                Timeline 
+                Timeline
                 <span class="icomoon dim-icon icon icon-clock" aria-hidden="true"></span>
               </h1>
               <div id="myTimeline"></div>
@@ -136,7 +136,7 @@
               // Get our data
               $.getJSON('/api/v1/skills/?format=json&limit=100').success(function(response) {
                 var skill_hash = {};
-  
+
                 // The value in the DB column is 'name', but we need the key to be 'text'
                 // in order to work with the 3rd party jQCloud plugin ... the value should
                 // really be a constructor value
@@ -148,8 +148,8 @@
                     link: {href: response.objects[ii].link, target: "_blank"}
                   });
                 }
- 
-                // Construct the Skill Cloud 
+
+                // Construct the Skill Cloud
                 $myCloud.jQCloud(
                   skills, {
                     afterCloudRender: function() {
@@ -163,12 +163,12 @@
                     delayedMode: true
                   }
                 );
-  
+
                 // Set the carousel to automatically slide
                 $myCarousel.carousel({interval: 90000});
                 $myCarousel.carousel('cycle');
- 
-                // Now retrieve and use the job information data 
+
+                // Now retrieve and use the job information data
                 $.getJSON('/api/v1/jobs/?format=json&limit=100').success(function(jobs) {
                   var events = [];
                   var ii = jobs.objects.length;
@@ -179,7 +179,7 @@
                       range: [new Date(thisJob.start), thisJob.end ? new Date(thisJob.end) : new Date()],
                       tip: [thisJob.company.short_name, thisJob.short_title],
                       skills: _.pluck(thisJob.skills, 'name')
-                    });  
+                    });
                   }
 
                   // Construct the Time line widget
@@ -210,7 +210,7 @@
                             }
                           }
                         );
-    
+
                       $this.find('.timeline-event')
                         .tooltip('show')
                         .click(function(e) {
@@ -231,7 +231,7 @@
                               }
                               $myTimeline.addClass('dimmed');
                             }
-    
+
                             var my_skills = $this.data('event').skills;
                             if (!$.isEmptyObject(skill_hash) && my_skills) {
                               for (var ii = 0; ii < my_skills.length; ii++) {
